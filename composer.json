@@ -1,0 +1,18 @@
+{
+  "name": "kwaadpepper/chronopost-creneau",
+  "description": "Package generated from https://ws.chronopost.fr/rdv-cxf/services/CreneauServiceWS?wsdl using wsdltophp/packagegenerator",
+  "license": "MIT",
+  "homepage": "https://github.com/Kwaadpepper/chronopost-creneau",
+  "require": {
+    "php": ">=7.4",
+    "ext-dom": "*",
+    "ext-mbstring": "*",
+    "ext-soap": "*",
+    "wsdltophp/packagebase": "~5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "./src/"
+    }
+  }
+}
