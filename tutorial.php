@@ -19,18 +19,18 @@ require_once __DIR__ . '/vendor/autoload.php';
  */
 $options = [
     WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => 'https://ws.chronopost.fr/rdv-cxf/services/CreneauServiceWS?wsdl',
-    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => ClassMap::get(),
+    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \ChronopostTimeSlot\ClassMap::get(),
 ];
 /**
  * Samples for Confirm ServiceType
  */
-$confirm = new \ServiceType\Confirm($options);
+$confirm = new \ChronopostTimeSlot\ServiceType\Confirm($options);
 $confirm->setSoapHeaderAccountNumber($accountNumber);
 $confirm->setSoapHeaderPassword($password);
 /**
  * Sample call for confirmDeliverySlotV2 operation/method
  */
-if ($confirm->confirmDeliverySlotV2(new \StructType\ConfirmDeliverySlotV2()) !== false) {
+if ($confirm->confirmDeliverySlotV2(new \ChronopostTimeSlot\StructType\ConfirmDeliverySlotV2()) !== false) {
     print_r($confirm->getResult());
 } else {
     print_r($confirm->getLastError());
@@ -38,7 +38,7 @@ if ($confirm->confirmDeliverySlotV2(new \StructType\ConfirmDeliverySlotV2()) !==
 /**
  * Sample call for confirmDeliverySlot operation/method
  */
-if ($confirm->confirmDeliverySlot(new \StructType\ConfirmDeliverySlot()) !== false) {
+if ($confirm->confirmDeliverySlot(new \ChronopostTimeSlot\StructType\ConfirmDeliverySlot()) !== false) {
     print_r($confirm->getResult());
 } else {
     print_r($confirm->getLastError());
@@ -46,13 +46,13 @@ if ($confirm->confirmDeliverySlot(new \StructType\ConfirmDeliverySlot()) !== fal
 /**
  * Samples for Get ServiceType
  */
-$get = new \ServiceType\Get($options);
+$get = new \ChronopostTimeSlot\ServiceType\Get($options);
 $get->setSoapHeaderAccountNumber($accountNumber);
 $get->setSoapHeaderPassword($password);
 /**
  * Sample call for getAdresseGeocodage operation/method
  */
-if ($get->getAdresseGeocodage(new \StructType\GetAdresseGeocodage()) !== false) {
+if ($get->getAdresseGeocodage(new \ChronopostTimeSlot\StructType\GetAdresseGeocodage()) !== false) {
     print_r($get->getResult());
 } else {
     print_r($get->getLastError());
@@ -60,13 +60,13 @@ if ($get->getAdresseGeocodage(new \StructType\GetAdresseGeocodage()) !== false) 
 /**
  * Samples for Search ServiceType
  */
-$search = new \ServiceType\Search($options);
+$search = new \ChronopostTimeSlot\ServiceType\Search($options);
 $search->setSoapHeaderAccountNumber($accountNumber);
 $search->setSoapHeaderPassword($password);
 /**
  * Sample call for searchDeliverySlot operation/method
  */
-if ($search->searchDeliverySlot(new \StructType\SearchDeliverySlot()) !== false) {
+if ($search->searchDeliverySlot(new \ChronopostTimeSlot\StructType\SearchDeliverySlot()) !== false) {
     print_r($search->getResult());
 } else {
     print_r($search->getLastError());

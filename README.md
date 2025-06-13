@@ -10,8 +10,10 @@ This package will only contain generated content from chronopost endpoint https:
 composer require kwaadpepper/chronopost-tracking
 ```
 
-    wsdltophp generate:package \
+```sh
+wsdltophp generate:package --namespace ChronopostTimeSlot \
         --urlorpath="https://ws.chronopost.fr/rdv-cxf/services/CreneauServiceWS?wsdl" \
         --destination="." \
         --composer-name="kwaadpepper/chronopost-creneau" \
         --force
+```
